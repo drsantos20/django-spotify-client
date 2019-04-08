@@ -1,5 +1,5 @@
 from django.test import TestCase
-from ..models.songs import Songs
+from ...models.songs import Songs
 
 
 class SongsTestCase(TestCase):
