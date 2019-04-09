@@ -6,15 +6,15 @@ from ...serializers import UserSerializer
 
 class TestUserSerializer(TestCase):
     def setUp(self):
-        self.user_serializer = {
-            'email': 'drsantos20@gmail.com'
-        }
-
         self.serializer_data = {
             'email': 'shazam@dc.com'
         }
 
-        self.user = User.objets.create(**self.user_serializer)
-        self.serializer = UserSerializer(instance=self.user)
+        self.serializer = UserSerializer(instance=User)
+
+    def test_user_serializer_all(self):
+        data = self.serializer_data
+
+        self.assertEqual(data.get('email'), 'shazam@dc.com')
 
 
