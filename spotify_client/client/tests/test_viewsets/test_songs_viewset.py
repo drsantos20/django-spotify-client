@@ -21,7 +21,7 @@ class TestSongsViewSet(APITestCase):
 
     def test_get_all_songs(self):
         response = self.client.get(
-            reverse('songs-all', kwargs={'version': 'v1'})
+            reverse('songs-list', kwargs={'version': 'v1'})
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
